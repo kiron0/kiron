@@ -1,6 +1,6 @@
 {
   "name": "kiron",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Open Kiron's portfolio site",
   "bin": {
     "kiron": "dist/index.js"
@@ -8,7 +8,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "start": "node dist/index.js"
   },
   "keywords": [
     "portfolio",
@@ -17,7 +18,9 @@
   "author": "Toufiq Hasan Kiron",
   "license": "MIT",
   "dependencies": {
-    "open": "^8.4.0"
+    "chalk": "^5.4.1",
+    "open": "^8.4.0",
+    "ora": "^8.2.0"
   },
   "repository": {
     "type": "git",
