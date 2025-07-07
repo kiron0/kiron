@@ -82,6 +82,4 @@ Perfect for:
 
 **Made with ❤️ by [Toufiq Hasan Kiron](https://kiron.dev)**
 
-*If you found this useful, please consider giving it a ⭐ on [GitHub](https://github.com/kiron0/kiron)!*
-
 </div>
