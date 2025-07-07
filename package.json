@@ -1,0 +1,31 @@
+{
+  "name": "kiron",
+  "version": "1.0.2",
+  "description": "Open Kiron's portfolio site",
+  "bin": {
+    "kiron": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "portfolio",
+    "kiron"
+  ],
+  "author": "Toufiq Hasan Kiron",
+  "license": "MIT",
+  "dependencies": {
+    "open": "^8.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiron0/kiron.git"
+  },
+  "homepage": "https://kiron.dev",
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "typescript": "^5.8.3"
+  }
+}
