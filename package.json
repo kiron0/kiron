@@ -7,7 +7,7 @@
     "kiron": "dist/cli/index.js"
   },
   "scripts": {
-    "build": "rm -rf dist && tsc && node ./fix-shebang.js",
+    "build": "rm -rf dist && tsc && tsx ./fix-shebang.ts",
     "dev": "tsx src/cli/index.tsx",
     "prepare": "npm run build",
     "start": "node dist/cli/index.js",
