@@ -1,16 +1,16 @@
 {
   "name": "kiron",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A beautiful interactive terminal portfolio CLI for Toufiq Hasan Kiron. Instantly explore his bio, projects, and contact links, all from your terminal—built with Ink and React for CLIs.",
   "type": "module",
   "bin": {
-    "kiron": "bin/cli.tsx"
+    "kiron": "dist/cli/index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsx bin/cli.tsx",
+    "build": "rm -rf dist && tsc && node ./fix-shebang.js",
+    "dev": "tsx src/cli/index.tsx",
     "prepare": "npm run build",
-    "start": "node dist/index.js",
+    "start": "node dist/cli/index.js",
     "format": "prettier --write \"**/*.{ts,tsx,js,json,css,mjs}\""
   },
   "keywords": [

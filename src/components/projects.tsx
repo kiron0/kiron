@@ -2,9 +2,15 @@ import { Box, Text, useInput } from "ink";
 import open from "open";
 import { useEffect, useState } from "react";
 import { getPortfolios, TPortfolio } from "../data/projects.js";
-import { NavigationContainer } from './navigation-container.js';
+import { NavigationContainer } from "./navigation-container.js";
 
-export function Projects({ goBack, goTo }: { goBack: () => void; goTo: (name: string) => void }) {
+export function Projects({
+  goBack,
+  goTo,
+}: {
+  goBack: () => void;
+  goTo: (name: string) => void;
+}) {
   const [projects, setProjects] = useState<TPortfolio[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -26,7 +32,8 @@ export function Projects({ goBack, goTo }: { goBack: () => void; goTo: (name: st
 
   useInput((input, key) => {
     if (projects.length > 0) {
-      if (key.upArrow) setIndex((i) => (i - 1 + projects.length) % projects.length);
+      if (key.upArrow)
+        setIndex((i) => (i - 1 + projects.length) % projects.length);
       if (key.downArrow) setIndex((i) => (i + 1) % projects.length);
       if (key.return) {
         const url = projects[index]?.sourceCode?.frontend;
@@ -37,7 +44,7 @@ export function Projects({ goBack, goTo }: { goBack: () => void; goTo: (name: st
 
   return (
     <NavigationContainer current="Projects" goBack={goBack} goTo={goTo}>
-      {() => (
+      {() =>
         loading ? (
           <Box flexDirection="column" padding={1}>
             <Text color="yellow">Loading projects...</Text>
@@ -49,7 +56,9 @@ export function Projects({ goBack, goTo }: { goBack: () => void; goTo: (name: st
           </Box>
         ) : (
           <Box flexDirection="column" padding={1}>
-            <Text bold color="cyan">📁 Projects (↑↓←→ to navigate)</Text>
+            <Text bold color="cyan">
+              📁 Projects (↑↓←→ to navigate)
+            </Text>
             {projects.map((proj, i) => (
               <Box key={proj?.title} flexDirection="column" marginTop={1}>
                 <Text color={i === index ? "greenBright" : undefined}>
@@ -62,7 +71,7 @@ export function Projects({ goBack, goTo }: { goBack: () => void; goTo: (name: st
             ))}
           </Box>
         )
-      )}
+      }
     </NavigationContainer>
   );
 }

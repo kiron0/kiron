@@ -4,6 +4,8 @@ package-lock.json
 bun.lock
 .github
 
+fix-shebang.js
+
 .env
 .DS_Store
 
